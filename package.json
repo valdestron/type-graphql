@@ -11,21 +11,21 @@
     "lint": "eslint ./packages/**/*.{ts,tsx}"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.21",
-    "@types/node": "^12.12.5",
+    "@types/jest": "^24.0.22",
+    "@types/node": "^12.12.7",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
-    "eslint-plugin-jest": "^23.0.2",
+    "eslint-plugin-jest": "^23.0.3",
     "husky": "^3.0.9",
     "jest": "^24.9.0",
-    "lerna": "^3.18.3",
+    "lerna": "^3.18.4",
     "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "ts-jest": "^24.1.0",
-    "ttypescript": "^1.5.7",
-    "typescript": "3.6.3"
+    "ttypescript": "^1.5.8",
+    "typescript": "3.7.2"
   },
   "husky": {
     "hooks": {
