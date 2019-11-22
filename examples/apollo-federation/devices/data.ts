@@ -6,15 +6,11 @@ export const devices: Device[] = plainToClass(Device, [
   {
     id: "1",
     name: "device0",
-    owner: {
-      id: "2",
-    },
+    ownerId: "1",
   },
   {
     id: "2",
     name: "device1",
-    owner: {
-      id: "1",
-    },
+    ownerId: "2",
   },
 ]);

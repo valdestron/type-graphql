@@ -1,8 +1,6 @@
 import { Field, ObjectType, Directive, ID } from "../../../src";
 
 import { devices } from "./data";
-import { Type } from "class-transformer";
-import User from "./account";
 
 @Directive(`@key(fields: "id")`)
 @ObjectType()
@@ -13,12 +11,11 @@ export default class Device {
   @Field()
   name: string;
 
-  @Type(() => User)
-  @Directive(`@provides(fields: "id")`)
   @Field()
-  owner: User;
+  ownerId: string;
 }
 
 export async function resolveDeviceReference(reference: Pick<Device, "id">): Promise<Device> {
+  console.log("in devices");
   return devices.find(u => u.id === reference.id)!;
 }

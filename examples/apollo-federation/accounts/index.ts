@@ -4,12 +4,12 @@ import AccountsResolver from "./resolver";
 import User, { resolveUserReference } from "./user";
 import { buildFederatedSchema } from "../helpers/buildFederatedSchema";
 import Device from "./device";
-import DeviceResolver from "../devices/resolver";
+import DeviceOwnerResolver from "./deviceResolver";
 
 export async function listen(port: number): Promise<string> {
   const schema = await buildFederatedSchema(
     {
-      resolvers: [AccountsResolver, DeviceResolver],
+      resolvers: [AccountsResolver, DeviceOwnerResolver],
       orphanedTypes: [User, Device],
     },
     {

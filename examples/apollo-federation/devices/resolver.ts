@@ -9,7 +9,7 @@ export default class UserResolver {
   @FieldResolver(() => [Device])
   async devices(@Root() account: User): Promise<Device[]> {
     return devices.filter(device => {
-      return device.owner.id === account.id;
+      return device.ownerId === account.id;
     });
   }
 }

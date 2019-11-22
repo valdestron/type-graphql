@@ -20,5 +20,6 @@ export default class User {
 }
 
 export async function resolveUserReference(reference: Pick<User, "id">): Promise<User> {
+  console.log("in user resolve");
   return users.find(u => u.id === reference.id)!;
 }

@@ -9,6 +9,6 @@ export default class User {
   @Field(type => ID)
   id: string;
 
-  @Field(type => Device)
+  @Field(type => [Device])
   devices: Device[];
 }
