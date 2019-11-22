@@ -1,6 +1,7 @@
 import { Field, ObjectType, Directive, ID } from "../../../src";
 
 import { users } from "./data";
+import Device from "../devices/device";
 
 @Directive(`@key(fields: "id")`)
 @ObjectType()

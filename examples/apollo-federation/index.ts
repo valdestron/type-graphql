@@ -6,6 +6,7 @@ import * as accounts from "./accounts";
 import * as reviews from "./reviews";
 import * as products from "./products";
 import * as inventory from "./inventory";
+import * as devices from "./devices";
 
 async function bootstrap() {
   const serviceList = [
@@ -13,6 +14,7 @@ async function bootstrap() {
     { name: "reviews", url: await reviews.listen(3002) },
     { name: "products", url: await products.listen(3003) },
     { name: "inventory", url: await inventory.listen(3004) },
+    { name: "devices", url: await devices.listen(3005) },
   ];
 
   const gateway = new ApolloGateway({

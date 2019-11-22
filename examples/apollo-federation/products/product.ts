@@ -20,6 +20,8 @@ export default class Product {
 
 export async function resolveProductReference(
   reference: Pick<Product, "upc">,
+  { test }: any,
 ): Promise<Product | undefined> {
+  console.log("in product reference resolver", test);
   return products.find(p => p.upc === reference.upc);
 }

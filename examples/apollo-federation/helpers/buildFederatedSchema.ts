@@ -27,5 +27,6 @@ export async function buildFederatedSchema(
   if (referenceResolvers) {
     addResolversToSchema(federatedSchema, referenceResolvers);
   }
+
   return federatedSchema;
 }

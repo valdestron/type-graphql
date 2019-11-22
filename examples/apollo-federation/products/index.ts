@@ -19,6 +19,9 @@ export async function listen(port: number): Promise<string> {
     schema,
     tracing: false,
     playground: true,
+    context: () => ({
+      test: 1,
+    }),
   });
 
   const { url } = await server.listen({ port });

@@ -1,19 +1,18 @@
 import { ApolloServer } from "apollo-server";
 
-import AccountsResolver from "./resolver";
-import User, { resolveUserReference } from "./user";
+import UserResolver from "./resolver";
+import Device, { resolveDeviceReference } from "./device";
 import { buildFederatedSchema } from "../helpers/buildFederatedSchema";
-import Device from "./device";
-import DeviceResolver from "../devices/resolver";
+import User from "./account";
 
 export async function listen(port: number): Promise<string> {
   const schema = await buildFederatedSchema(
     {
-      resolvers: [AccountsResolver, DeviceResolver],
-      orphanedTypes: [User, Device],
+      resolvers: [UserResolver],
+      orphanedTypes: [Device, User],
     },
     {
-      User: { __resolveReference: resolveUserReference },
+      Device: { __resolveReference: resolveDeviceReference },
     },
   );
 
@@ -24,5 +23,7 @@ export async function listen(port: number): Promise<string> {
   });
 
   const { url } = await server.listen({ port });
+  console.log(`Device service ready at ${url}`);
+
   return url;
 }
